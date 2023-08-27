@@ -4,7 +4,7 @@ While Python allows us to work in the command line, it's not very convenient. We
 
 ## Visual Studio Code (recommended)
 
-Visual Studio Code is a free source-code editor made by Microsoft for Windows, Linux and macOS. It's a great tool for developing in many programming languages.
+Visual Studio Code is a free source-code editor made by Microsoft for Windows, Linux and macOS. It's a great tool for developing in many programming languages. System requirements for VSCode are very minimal [1.6 GHz CPU, 1GB RAM, 500 MB Storage](https://code.visualstudio.com/Docs/supporting/requirements) but it's recommended to have a better PC than the minimum required for a better development experience.
 
 ### Installation
 
@@ -26,7 +26,7 @@ See the attached screenshot for reference:
 
 ## PyCharm (alternative)
 
-PyCharm is a Python IDE made by JetBrains. It's a great tool for developing in Python. It's not better or worse than Visual Studio Code, just different. You can use either one. One advantage of PyCharm is that it has built-in Python support, so you don't need to install any plugins.
+PyCharm is a Python IDE made by JetBrains. It's a great tool for developing in Python. It's not better or worse than Visual Studio Code, just different. You can use either one. One advantage of PyCharm is that it has built-in Python support, so you don't need to install any plugins. Note: System requirements for PyCharm are heavier than VSCode: [4GB RAM, 3.5GB Storage](https://www.jetbrains.com/help/pycharm/installation-guide.html#requirements)
 
 1. Go to [https://www.jetbrains.com/pycharm/download/](https://www.jetbrains.com/pycharm/download/)
 2. Download the installer for your operating system (for example: Click on the big button that says "Download .exe")
