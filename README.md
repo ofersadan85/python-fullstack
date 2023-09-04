@@ -11,6 +11,7 @@ Course material for "Python Fullstack"
 2. Python basics
     1. [Hello World](./01-introduction/hello.md)
     2. [Variables](./01-introduction/variables.md)
+    3. [Data types (Primitive)](./01-introduction/types-primitive.md)
 3. Basic exercises / algorithms
     1. [Basic math + Modulus](./02-basic-exercises/a.py)
     2. [Convert minutes to hours/minutes/seconds](./02-basic-exercises/b.py)
