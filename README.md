@@ -12,5 +12,5 @@ Course material for "Python Fullstack"
     1. [Hello World](./01-introduction/hello.md)
     2. [Variables](./01-introduction/variables.md)
 3. Basic exercises / algorithms
-    1. [Get the 1st (hundreds) digit of a 3 digit number](./02-basic-exercises/a.py)
-    2. [Get the 2nd (tens) digit of a 3 digit number](./02-basic-exercises/a.py#L22-L46)
+    1. [Basic math + Modulus](./02-basic-exercises/a.py)
+    2. [Convert minutes to hours/minutes/seconds](./02-basic-exercises/b.py)

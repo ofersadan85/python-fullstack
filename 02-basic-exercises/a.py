@@ -43,3 +43,46 @@ tens = remainder - ones  # tens = 40
 tens = tens / 10  # tens = 4.0
 tens = int(tens)  # tens = 4
 print(tens)
+
+# INPUT = three values (numbers), OUTPUT = sum and average.
+a = 3
+b = 4
+c = 5
+print(a + b + c)  # SUM = 12
+print((a + b + c) / 3)  # AVERAGE = 4.0
+
+# INPUT = width and length of a rectangle room, OUTPUT = area and perimeter.
+width = 3
+length = 4
+print(width * length)  # AREA = 12
+print((width + length) * 2)  # PERIMETER = 14
+
+# INPUT = diameter and depth of a pot, OUTPUT = volume.
+diameter = 3
+depth = 4
+radius = diameter / 2
+print(3.14 * radius * radius * depth)  # VOLUME ~= 28.26
+
+# INPUT = 4 digit number (1000-9999), OUTPUT = the "ones" digit.
+number = 1234
+print(number % 10)  # ONES = 4
+
+# INPUT = 4 digit number (1000-9999), OUTPUT = the "tens" digit.
+number = 1234
+print((number % 100) // 10)  # TENS = 3
+
+# INPUT = 3 digit number (100-999), OUTPUT = the "hundreds" digit.
+number = 123
+print((number % 1000) // 100)  # HUNDREDS = 1
+
+# INPUT = 2 digit number (10-99), OUTPUT = sum of the digits.
+number = 12
+ones = number % 10
+tens = (number % 100) // 10
+print(ones + tens)  # SUM = 3
+
+# INPUT = 2 digit number (10-99), OUTPUT = reverse order of the digits.
+number = 12
+ones = number % 10
+tens = (number % 100) // 10
+print(ones * 10 + tens)  # REVERSE = 21
