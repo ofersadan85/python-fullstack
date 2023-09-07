@@ -13,6 +13,7 @@ Course material for "Python Fullstack"
     2. [Variables](./01-introduction/variables.md)
     3. [Data types (Primitive)](./01-introduction/types-primitive.md)
     4. [Data types (Collections)](./01-introduction/types-collections.md)
+    5. [Conditions](./01-introduction/conditions.md)
 3. Basic exercises / algorithms
     1. [Basic math + Modulus](./02-basic-exercises/a.py)
     2. [Convert minutes to hours/minutes/seconds](./02-basic-exercises/b.py)
