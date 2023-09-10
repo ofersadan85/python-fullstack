@@ -18,3 +18,4 @@ Course material for "Python Fullstack"
     1. [Basic math + Modulus](./02-basic-exercises/a.py)
     2. [Convert minutes to hours/minutes/seconds](./02-basic-exercises/b.py)
     3. [Basic formatting (decimal places)](./02-basic-exercises/c.py)
+    4. Trivia game. [Starting code](./02-basic-exercises/d_trivia_1.py) | Solution (will be added later)
