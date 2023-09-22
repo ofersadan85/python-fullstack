@@ -5,7 +5,7 @@ Collections are data types that can hold multiple values. There are 4 built-in c
 - `tuple`
 - `list`
 - `set`
-- `dict` (Which we will cover in the next section)
+- `dict` (Covered separately in [Data types (Collections - Dictionary)](./types-dict.md))
 - `str` (Which is a [primitive data type](./types-primitive.md), but it's also a collection data type)
 
 ## Tuple
