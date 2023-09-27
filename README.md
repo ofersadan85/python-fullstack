@@ -26,3 +26,4 @@ Course material for "Python Fullstack"
     6. [Prime numbers](./02-basic-exercises/f_primes.py) | [Solutions](./02-basic-exercises/f_primes_solution.py)
 4. Rolling projects
     1. [Trivia game](./projects/trivia.py) (Continued from [Basic exercises](./02-basic-exercises/d_trivia_1.py))
+    2. [Poker](./projects/poker/main.py)
