@@ -17,6 +17,7 @@ Course material for "Python Fullstack"
     6. [Functions (Simple)](./01-introduction/functions-simple.md)
     7. [Loops](./01-introduction/loops.md)
     8. [Data types (Collections - Dictionary)](./01-introduction/types-dict.md)
+    9. [Files - Reading and writing](./01-introduction/files.md)
 3. Basic exercises / algorithms
     1. [Basic math + Modulus](./02-basic-exercises/a.py)
     2. [Convert minutes to hours/minutes/seconds](./02-basic-exercises/b.py)
