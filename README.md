@@ -26,5 +26,5 @@ Course material for "Python Fullstack"
     5. [Basic functions](./02-basic-exercises/e_functions_1.py) | [Solutions](./02-basic-exercises/e_functions_1_solution.py)
     6. [Prime numbers](./02-basic-exercises/f_primes.py) | [Solutions](./02-basic-exercises/f_primes_solution.py)
 4. Rolling projects
-    1. [Trivia game](./projects/trivia.py) (Continued from [Basic exercises](./02-basic-exercises/d_trivia_1.py))
+    1. [Trivia game](./projects/trivia/main.py) (Continued from [Basic exercises](./02-basic-exercises/d_trivia_1.py))
     2. [Poker](./projects/poker/main.py)
