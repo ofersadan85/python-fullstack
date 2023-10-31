@@ -28,3 +28,4 @@ Course material for "Python Fullstack"
 4. Rolling projects
     1. [Trivia game](./projects/trivia/main.py) (Continued from [Basic exercises](./02-basic-exercises/d_trivia_1.py))
     2. [Poker](./projects/poker/main.py)
+    3. [Tic Tac Toe](./projects/tictactoe/main.py)
