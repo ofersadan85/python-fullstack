@@ -18,14 +18,16 @@ Course material for "Python Fullstack"
     7. [Loops](./01-introduction/loops.md)
     8. [Data types (Collections - Dictionary)](./01-introduction/types-dict.md)
     9. [Files - Reading and writing](./01-introduction/files.md)
-3. Basic exercises / algorithms
+3. Advanced Python
+    1. [Error handling (try...except)](./02-advanced/error-handling.md)
+4. Basic exercises / algorithms
     1. [Basic math + Modulus](./02-basic-exercises/a.py)
     2. [Convert minutes to hours/minutes/seconds](./02-basic-exercises/b.py)
     3. [Basic formatting (decimal places)](./02-basic-exercises/c.py)
     4. Trivia game. [Starting code](./02-basic-exercises/d_trivia_1.py) | [Rolling project](./projects/trivia.py)
     5. [Basic functions](./02-basic-exercises/e_functions_1.py) | [Solutions](./02-basic-exercises/e_functions_1_solution.py)
     6. [Prime numbers](./02-basic-exercises/f_primes.py) | [Solutions](./02-basic-exercises/f_primes_solution.py)
-4. Rolling projects
+5. Rolling projects
     1. [Trivia game](./projects/trivia/main.py) (Continued from [Basic exercises](./02-basic-exercises/d_trivia_1.py))
     2. [Poker](./projects/poker/main.py)
     3. [Tic Tac Toe](./projects/tictactoe/main.py)
