@@ -19,7 +19,8 @@ Course material for "Python Fullstack"
     8. [Data types (Collections - Dictionary)](./01-introduction/types-dict.md)
     9. [Files - Reading and writing](./01-introduction/files.md)
 3. Advanced Python
-    1. [Error handling (try...except)](./02-advanced/error-handling.md)
+    1. [Error handling (try...except)](./03-advanced/error-handling.md)
+    2. [Classes - Basics](./03-advanced/classes-01.md)
 4. Basic exercises / algorithms
     1. [Basic math + Modulus](./02-basic-exercises/a.py)
     2. [Convert minutes to hours/minutes/seconds](./02-basic-exercises/b.py)
