@@ -15,24 +15,50 @@ def display_board(board):
     -----------
       |   |
  3| {} | {} | {}"""
-    print(board_format.format(board[0], board[1], board[2], board[3], board[4], board[5], board[6], board[7], board[8]))
+    print(
+        board_format.format(
+            board[0][0],
+            board[0][1],
+            board[0][2],
+            board[1][0],
+            board[1][1],
+            board[1][2],
+            board[2][0],
+            board[2][1],
+            board[2][2],
+        )
+    )
 
 
 def check_win(board):
-    win_combos = [  # These are the indexes of all the possible ways to win
-        [0, 1, 2],  # Top row
-        [3, 4, 5],  # Middle row
-        [6, 7, 8],  # Bottom row
-        [0, 3, 6],  # Left column
-        [1, 4, 7],  # Middle column
-        [2, 5, 8],  # Right column
-        [0, 4, 8],  # Diagonal (top left to bottom right)
-        [2, 4, 6],  # Diagonal (top right to bottom left)
-    ]
-    for combo in win_combos:
-        if board[combo[0]] == board[combo[1]] == board[combo[2]] != " ":
+    x_wins = ["X", "X", "X"]
+    o_wins = ["O", "O", "O"]
+
+    for i in range(3):
+        column = [board[0][i], board[1][i], board[2][i]]
+        row = [board[i][0], board[i][1], board[i][2]]
+        if column in [x_wins, o_wins] or row in [x_wins, o_wins]:
             return True
-    return False
+
+    if board[0][0] == board[1][1] == board[2][2] != " ":
+        return True
+    if board[0][2] == board[1][1] == board[2][0] != " ":
+        return True
+
+    # win_combos = [  # These are the indexes of all the possible ways to win
+    #     [0, 1, 2],  # Top row
+    #     [3, 4, 5],  # Middle row
+    #     [6, 7, 8],  # Bottom row
+    #     [0, 3, 6],  # Left column
+    #     [1, 4, 7],  # Middle column
+    #     [2, 5, 8],  # Right column
+    #     [0, 4, 8],  # Diagonal (top left to bottom right)
+    #     [2, 4, 6],  # Diagonal (top right to bottom left)
+    # ]
+    # for combo in win_combos:
+    #     if board[combo[0]] == board[combo[1]] == board[combo[2]] != " ":
+    #         return True
+    # return False
 
 
 def check_tie(board):
@@ -66,44 +92,50 @@ def save_results(winner):
         results_file.seek(0)
         json.dump(results, results_file)
         results_file.close()
-    print("The current results are: X: {}, O: {}, Tie: {}".format(results["X"], results["O"], results["Tie"]))
+    print(
+        "The current results are: X: {}, O: {}, Tie: {}".format(
+            results["X"], results["O"], results["Tie"]
+        )
+    )
 
 
 winner = False
-board = [" ", " ", " ", " ", " ", " ", " ", " ", " "]
+board = [[" ", " ", " "], [" ", " ", " "], [" ", " ", " "]]
+
+
 current_player = "X"
 while not winner:
     display_board(board)
     print("It is {}'s turn.".format(current_player))
     move = input("Where would you like to move? ")
-    if move.lower() in ["exit", "quit", "q", "x"]:
+    move = move.lower()
+    if move in ["exit", "quit", "q", "x"]:
         print("Stopping game... Goodbye!")
         exit()
-    if move.lower() in ["a1", "1a"]:
-        board[0] = current_player
-    elif move.lower() in ["b1", "1b"]:
-        board[1] = current_player
-    elif move.lower() in ["c1", "1c"]:
-        board[2] = current_player
-    elif move.lower() in ["a2", "2a"]:
-        board[3] = current_player
-    elif move.lower() in ["b2", "2b"]:
-        board[4] = current_player
-    elif move.lower() in ["c2", "2c"]:
-        board[5] = current_player
-    elif move.lower() in ["a3", "3a"]:
-        board[6] = current_player
-    elif move.lower() in ["b3", "3b"]:
-        board[7] = current_player
-    elif move.lower() in ["c3", "3c"]:
-        board[8] = current_player
-    else:
+
+    columns = {"a": 0, "b": 1, "c": 2}
+    rows = {"1": 0, "2": 1, "3": 2}
+
+    for letter in move:
+        if letter in columns.keys():
+            column = columns[letter]
+    for letter in move:
+        if letter in rows.keys():
+            row = rows[letter]
+    try:
+        if board[row][column] != " ":
+            # print("That is not a valid move.")
+            # continue
+            raise NameError
+        board[row][column] = current_player
+    except NameError:
         print("That is not a valid move.")
         continue
+
     if check_win(board):
         winner = current_player
-    elif check_tie(board):
-        winner = "Tie"
+    # elif check_tie(board):
+    #     winner = "Tie"
     if current_player == "X":
         current_player = "O"
     else:
