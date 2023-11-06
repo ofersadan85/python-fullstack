@@ -172,3 +172,125 @@ print(jane.legs) # 2
 jane.walk() # Walking
 jane.teach() # Teaching
 ```
+
+## `__init__` method
+
+When initializing an object (i.e creating an instance of a class), Python internally calls a special method called `__init__`. This method is called with the arguments that we pass to the class constructor. We can define this method in our class, and use it to initialize the instance. This is useful when we want to set some instance attributes when the object is created.
+
+```python
+class Person:
+    def __init__(self, name):
+        self.name = name
+
+person1 = Person("John")
+print(person1.name) # John
+```
+
+Arguments do not have to match to internal attributes. We can use any name we want, and set any attributes we want when initializing the object.
+
+```python
+import random
+
+class Person:
+    def __init__(self, first_name, last_name):
+        self.full_name = first_name + " " + last_name
+        self.unique_id = random.randint(0, 1000)
+
+person1 = Person("John", "Doe")
+print(person1.full_name) # John Doe
+print(person1.unique_id) # 123
+```
+
+## Overriding methods
+
+When we inherit from a class, we can override any of the methods of the parent class. This is useful when we want to change the behavior of a method, or add some additional functionality.
+
+```python
+class Car:
+    def drive(self):
+        print("Driving")
+
+class SportsCar(Car):
+    def drive(self):
+        print("Driving fast")
+```
+
+## Calling parent methods (`super`)
+
+When we override a method, we can still call the parent method, if we want to. This is useful when we want to add some additional functionality, but still keep the original functionality.
+
+```python
+class Car:
+    def drive(self):
+        print("Driving")
+
+class SportsCar(Car):
+    def drive(self):
+        super().drive() # Calling parent method
+        print("Fast")
+
+car1 = Car()
+car1.drive() # Driving
+car2 = SportsCar()
+car2.drive() # Driving \n Fast
+```
+
+## Magic methods
+
+Like `__init__`, there are many other special methods that we can define in our classes. These are called "magic methods", and they are used by Python internally. We can override these methods, and change the behavior of our classes. For example, we can override the `__str__` method, and change how our class is represented as a string.
+
+```python
+class Person:
+    def __init__(self, name):
+        self.name = name
+
+    def __str__(self):
+        return "A person named " + self.name
+
+person1 = Person("John")
+print(person1) # A person named John
+```
+
+The list of all magic methods is too long to describe here, but for convenience, here is a table of some of the more common and useful methods:
+
+| Method | Usage example | Description | Parameters | Return value |
+| --- | --- | --- | --- | --- |
+| `__init__` | `john = Person()` | Called when initializing an object | `self` and any other arguments | `None` |
+| `__str__` | `print(john)` | Called when converting an object to a string | `self` | `str` |
+| `__int__` | `int(john)` | Called when converting an object to an integer | `self` | `int` |
+| `__add__` | `john + jane` | Called when adding two objects | `self` and only one other argument | Anything |
+| `__sub__` | `john - jane` | Called when subtracting two objects | `self` and only one other argument | Anything |
+| `__mul__` | `john * jane` | Called when multiplying two objects | `self` and only one other argument | Anything |
+| `__div__` | `john / jane` | Called when dividing two objects | `self` and only one other argument | Anything |
+| `__eq__` | `john == jane` | Called when comparing two objects for equality | `self` and only one other argument | `bool` |
+| `__lt__` | `john < jane` | Called when comparing two objects for less than | `self` and only one other argument | `bool` |
+| `__gt__` | `john > jane` | Called when comparing two objects for greater than | `self` and only one other argument | `bool` |
+| `__le__` | `john <= jane` | Called when comparing two objects for less than or equal | `self` and only one other argument | `bool` |
+| `__ge__` | `john >= jane` | Called when comparing two objects for greater than or equal | `self` and only one other argument | `bool` |
+| `__len__` | `len(john)` | Called when getting the length of an object | `self` | `int` |
+| `__getitem__` | `john[0]` | Called when getting an item from an object | `self` and the item name | Anything |
+| `__setitem__` | `john[0] = "John"` | Called when setting an item in an object | `self`, item name, item value | `None` |
+| `__contains__` | `"John" in john` | Called when checking if an item is in an object | `self` and the item name | `bool` |
+
+The full list and documentation can be found [here](https://docs.python.org/3/reference/datamodel.html#special-method-names).
+
+In effect, using one of these magic methods is just a shortcut for calling a method on an object, for example:
+
+```python
+class Person:
+    def __init__(self, name):
+        self.name = name
+
+    def make_baby(self, other):
+        return "A baby for " + self.name + " and " + other.name
+
+    def __add__(self, other):
+        return "A baby for " + self.name + " and " + other.name
+
+john = Person("John")
+jane = Person("Jane")
+result1 = john.make_baby(jane) # A baby for John and Jane
+result2 = john.__add__(jane) # A baby for John and Jane
+result3 = john + jane # A baby for John and Jane
+print(result1 == result2 == result3) # True (all three are the same)
+```
