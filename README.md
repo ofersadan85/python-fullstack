@@ -20,7 +20,10 @@ Course material for "Python Fullstack"
     9. [Files - Reading and writing](./01-introduction/files.md)
 3. Advanced Python
     1. [Error handling (try...except)](./03-advanced/error-handling.md)
-    2. [Classes - Basics](./03-advanced/classes-01.md)
+    2. [Classes - Basic OOP](./03-advanced/classes-01.md)
+    3. [One-liners - List comprehension](./03-advanced/one-liners.md)
+    4. [One-liners - Ternary `if-else`](./03-advanced/one-liners.md)
+    5. [Advanced String formatting](./03-advanced/string-formatting.md)
 4. Basic exercises / algorithms
     1. [Basic math + Modulus](./02-basic-exercises/a.py)
     2. [Convert minutes to hours/minutes/seconds](./02-basic-exercises/b.py)
