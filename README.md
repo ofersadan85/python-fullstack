@@ -24,13 +24,15 @@ Course material for "Python Fullstack"
     3. [One-liners - List comprehension](./03-advanced/one-liners.md)
     4. [One-liners - Ternary `if-else`](./03-advanced/one-liners.md)
     5. [Advanced String formatting](./03-advanced/string-formatting.md)
-4. Basic exercises / algorithms
+    6. [Advanced functions](./03-advanced/functions-advanced.md)
+4. Exercises / Algorithms
     1. [Basic math + Modulus](./02-basic-exercises/a.py)
     2. [Convert minutes to hours/minutes/seconds](./02-basic-exercises/b.py)
     3. [Basic formatting (decimal places)](./02-basic-exercises/c.py)
     4. Trivia game. [Starting code](./02-basic-exercises/d_trivia_1.py) | [Rolling project](./projects/trivia.py)
     5. [Basic functions](./02-basic-exercises/e_functions_1.py) | [Solutions](./02-basic-exercises/e_functions_1_solution.py)
     6. [Prime numbers](./02-basic-exercises/f_primes.py) | [Solutions](./02-basic-exercises/f_primes_solution.py)
+    7. [Advanced functions](./02-basic-exercises/g_functions_2.py) | [Solutions](./02-basic-exercises/g_functions_2_solution.py)
 5. Rolling projects
     1. [Trivia game](./projects/trivia/main.py) (Continued from [Basic exercises](./02-basic-exercises/d_trivia_1.py))
     2. [Poker](./projects/poker/main.py)
