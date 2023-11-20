@@ -19,6 +19,7 @@ Course material for "Python Fullstack"
     7. [Loops](./01-introduction/loops.md)
     8. [Data types (Collections - Dictionary)](./01-introduction/types-dict.md)
     9. [Files - Reading and writing](./01-introduction/files.md)
+    10. [PyPi / pip - Installing packages](./01-introduction/pip.md)
 3. Advanced Python
     1. [Error handling (try...except)](./03-advanced/error-handling.md)
     2. [Classes - Basic OOP](./03-advanced/classes-01.md)
