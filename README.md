@@ -27,6 +27,7 @@ Course material for "Python Fullstack"
     5. [Advanced String formatting](./03-advanced/string-formatting.md)
     6. [Advanced functions](./03-advanced/functions-advanced.md)
     7. [Generators](./03-advanced/generators.md)
+    8. [Parallel processing](./03-advanced/parallel-processing.md)
 4. Exercises / Algorithms
     1. [Basic math + Modulus](./02-basic-exercises/a.py)
     2. [Convert minutes to hours/minutes/seconds](./02-basic-exercises/b.py)
