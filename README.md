@@ -31,7 +31,11 @@ Course material for "Python Fullstack"
     8. [Advanced classes - `dataclasses`, `@classmethods`, `@staticmethods` and `@property`](./03-advanced/classes-02.md)
     9. [Generators](./03-advanced/generators.md)
     10. [Parallel processing](./03-advanced/parallel-processing.md)
-4. Exercises / Algorithms
+    11. [Unit testing](./04-external/pytest.md)
+4. External Python Packages (PyPi / pip)
+    1. [PyPi / pip - Installing packages](./01-introduction/pip.md)
+    2. [`pytest` - Unit testing](./04-external/pytest.md)`
+5. Exercises / Algorithms
     1. [Basic math + Modulus](./02-basic-exercises/a.py)
     2. [Convert minutes to hours/minutes/seconds](./02-basic-exercises/b.py)
     3. [Basic formatting (decimal places)](./02-basic-exercises/c.py)
@@ -39,7 +43,7 @@ Course material for "Python Fullstack"
     5. [Basic functions](./02-basic-exercises/e_functions_1.py) | [Solutions](./02-basic-exercises/e_functions_1_solution.py)
     6. [Prime numbers](./02-basic-exercises/f_primes.py) | [Solutions](./02-basic-exercises/f_primes_solution.py)
     7. [Advanced functions](./02-basic-exercises/g_functions_2.py) | [Solutions](./02-basic-exercises/g_functions_2_solution.py)
-5. Rolling projects
+6. Rolling projects
     1. [Trivia game](./projects/trivia/main.py) (Continued from [Basic exercises](./02-basic-exercises/d_trivia_1.py))
     2. [Poker](./projects/poker/main.py)
     3. [Tic Tac Toe](./projects/tictactoe/main.py)
