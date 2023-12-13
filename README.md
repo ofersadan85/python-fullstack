@@ -48,3 +48,14 @@ Course material for "Python Fullstack"
     2. [Poker](./projects/poker/main.py)
     3. [Tic Tac Toe](./projects/tictactoe/main.py)
     4. [Library](./projects/library/README.md)
+7. Tools
+    1. [Git](./01-introduction/git.md)
+    2. GitHub - Will be added later
+    3. [SQL / SQLite / Databases](./04-external/sql.md)
+    4. Docker - Will be added later
+8. Web
+    1. [HTTP Basics](./05-web/http.md)
+    2. HTML - Will be added later
+    3. CSS - Will be added later
+    4. JavaScript - Will be added later
+    5. React - Will be added later
