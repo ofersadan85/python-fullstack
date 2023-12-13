@@ -83,6 +83,16 @@ The number `200` in the previous example is the ***status code***. It indicates 
 | `500` | Internal Server Error |
 | `503` | Service Unavailable |
 
+These can be roughly divided into 5 categories:
+
+| Category | Description |
+| -------- | ----------- |
+| `1xx` | Informational |
+| `2xx` | Success |
+| `3xx` | Redirection / Temporary Error |
+| `4xx` | Client Error |
+| `5xx` | Server Error |
+
 ### Response Headers & Body
 
 Like the request, the response may contain headers as well. For example:
