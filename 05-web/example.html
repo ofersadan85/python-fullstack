@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Library Catalog</title>
+    <link rel="stylesheet" href="example.css" />
+  </head>
+  <body>
+    <h1>Library Catalog</h1>
+
+    <!-- Search form -->
+    <form action="https://fake-endpoint.com/post" method="post">
+      <input type="text" name="search" placeholder="Search books..." />
+      <button type="submit">Search</button>
+    </form>
+
+    <!-- Books table -->
+    <table border="1">
+      <tr>
+        <th>Title</th>
+        <th>Author</th>
+        <th>Year</th>
+        <th>Availability</th>
+        <th>Actions</th>
+      </tr>
+      <tr>
+        <td style="color: red">1984</td>
+        <td>George Orwell</td>
+        <td>1949</td>
+        <td>Loaned</td>
+        <td>
+          <button>Return Book</button>
+          <button disabled>Loan Book</button>
+          <a href="#modal1" class="button-link">Remove Book</a>
+        </td>
+      </tr>
+      <tr>
+        <td>To Kill a Mockingbird</td>
+        <td>Harper Lee</td>
+        <td>1960</td>
+        <td>Available</td>
+        <td>
+          <button disabled>Return Book</button>
+          <button>Loan Book</button>
+          <a href="#modal1" class="button-link">Remove Book</a>
+        </td>
+      </tr>
+
+      <tr>
+        <td>One Hundred Years of Solitude</td>
+        <td>Gabriel García Márquez</td>
+        <td>1967</td>
+        <td>Available</td>
+        <td>
+          <button disabled>Return Book</button>
+          <button>Loan Book</button>
+          <a href="#modal1" class="button-link">Remove Book</a>
+        </td>
+      </tr>
+      <tr>
+        <td style="color: red">The Great Gatsby</td>
+        <td>F. Scott Fitzgerald</td>
+        <td>1925</td>
+        <td>Loaned</td>
+        <td>
+          <button>Return Book</button>
+          <button disabled>Loan Book</button>
+          <a href="#modal1" class="button-link">Remove Book</a>
+        </td>
+      </tr>
+      <tr>
+        <td>Moby Dick</td>
+        <td>Herman Melville</td>
+        <td>1851</td>
+        <td>Available</td>
+        <td>
+          <button disabled>Return Book</button>
+          <button>Loan Book</button>
+          <a href="#modal1" class="button-link">Remove Book</a>
+        </td>
+      </tr>
+      <tr>
+        <td style="color: red">Pride and Prejudice</td>
+        <td>Jane Austen</td>
+        <td>1813</td>
+        <td style="color: red">Loaned</td>
+        <td>
+          <button>Return Book</button>
+          <button disabled>Loan Book</button>
+          <a href="#modal1" class="button-link">Remove Book</a>
+        </td>
+      </tr>
+      <tr>
+        <td style="color: red">War and Peace</td>
+        <td>Leo Tolstoy</td>
+        <td>1869</td>
+        <td>Loaned</td>
+        <td>
+          <button>Return Book</button>
+          <button disabled>Loan Book</button>
+          <a href="#modal1" class="button-link">Remove Book</a>
+        </td>
+      </tr>
+      <tr>
+        <td style="color: red">Crime and Punishment</td>
+        <td>Fyodor Dostoevsky</td>
+        <td>1866</td>
+        <td>Loaned</td>
+        <td>
+          <button>Return Book</button>
+          <button disabled>Loan Book</button>
+          <a href="#modal1" class="button-link">Remove Book</a>
+        </td>
+      </tr>
+      <tr>
+        <td>The Catcher in the Rye</td>
+        <td>J.D. Salinger</td>
+        <td>1951</td>
+        <td>Available</td>
+        <td>
+          <button disabled>Return Book</button>
+          <button>Loan Book</button>
+          <a href="#modal1" class="button-link">Remove Book</a>
+        </td>
+      </tr>
+
+      <tr>
+        <td>Animal Farm</td>
+        <td>George Orwell</td>
+        <td>1945</td>
+        <td>Available</td>
+        <td>
+          <button disabled>Return Book</button>
+          <button>Loan Book</button>
+          <a href="#modal1" class="button-link">Remove Book</a>
+        </td>
+      </tr>
+    </table>
+
+    <!-- Statistics -->
+    <div class="statistics">
+      <h2>Statistics</h2>
+      <p>Number of books in library: 100</p>
+      <p>Number of books on loan: <span class="loaned-count">30</span></p>
+    </div>
+
+    <form action="https://fake-endpoint.com/add_book" method="get">
+      <p>
+        <button type="submit">Add new book</button>
+      </p>
+    </form>
+
+    <!-- Modal Section -->
+    <div id="modal1" class="modal">
+      <div class="modal-content">
+        <a href="#" class="close">&times;</a>
+        <p>Are you sure you want to remove this book?</p>
+        <!-- Placeholder for actual action -->
+        <a href="#" class="button-link">Confirm</a>
+      </div>
+    </div>
+  </body>
+</html>
