@@ -17,6 +17,7 @@ To install them, open VSCode and click on the "Extensions" icon in the left menu
 | isort | Sorts your Python imports |
 | Prettier | Code formatter, makes your code look nice, can be used with the keyboard shortcut `Alt+Shift+F`. Note: We'll prefer to use Black Formatter instead of Prettier for Python code, but we'll use Prettier for other files like HTML, CSS, JavaScript, JSON, etc. |
 | vscode-icons | Adds icons to files in the file explorer, just nice to have |
+| SQLite Viewer | Allows you to view SQLite databases in VSCode |
 
 Each of these extensions has a page on the [VSCode Marketplace](https://marketplace.visualstudio.com/VSCode) where you can read more about them. Make sure to install the ones you think you'll need. Be careful when installing unfamiliar extensions, as they can slow down VSCode and cause other issues, including security issues.
 
