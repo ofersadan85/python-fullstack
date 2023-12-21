@@ -6,7 +6,20 @@
   </head>
   <body>
     <h1>Library Catalog</h1>
-
+    <form method="POST" action="/submit">
+      <input type="text" name="text" placeholder="Enter text">
+      <input type="email" name="email" placeholder="Enter email">
+      <input type="password" name="password" placeholder="Enter password">
+      <input type="number" name="number" placeholder="Enter number">
+      <input type="checkbox" name="checkbox" value="1"> Checkbox
+      <input type="radio" name="radio" value="1"> Radio 1
+      <input type="radio" name="radio" value="2"> Radio 2
+      <input type="file" name="file">
+      <input type="button" name="button" value="Button">
+      <input type="submit" name="submit" value="Submit">
+      <input type="reset" name="reset" value="Reset">
+  </form>
+    
     <!-- Search form -->
     <form action="https://fake-endpoint.com/post" method="post">
       <input type="text" name="search" placeholder="Search books..." />

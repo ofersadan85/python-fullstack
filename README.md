@@ -34,7 +34,8 @@ Course material for "Python Fullstack"
     11. [Unit testing](./04-external/pytest.md)
 4. External Python Packages (PyPi / pip)
     1. [PyPi / pip - Installing packages](./01-introduction/pip.md)
-    2. [`pytest` - Unit testing](./04-external/pytest.md)`
+    2. [`pytest` - Unit testing](./04-external/pytest.md)
+    3. [`flask` - Web framework](./04-external/flask.md)
 5. Exercises / Algorithms
     1. [Basic math + Modulus](./02-basic-exercises/a.py)
     2. [Convert minutes to hours/minutes/seconds](./02-basic-exercises/b.py)
@@ -55,7 +56,10 @@ Course material for "Python Fullstack"
     4. Docker - Will be added later
 8. Web
     1. [HTTP Basics](./05-web/http.md)
-    2. HTML - Will be added later
-    3. CSS - Will be added later
+    2. [HTML](./05-web/html.md)
+    3. [CSS](./05-web/css.md)
+    4. `flask` - Python Web framework
+        1. [Introduction](./04-external/flask.md)
+        2. Templates - Will be added later
     4. JavaScript - Will be added later
     5. React - Will be added later
