@@ -1,0 +1,10 @@
+{% extends "base.html" %} {% block content %}
+<h1>Home Page</h1>
+<p class="lead">
+  Welcome to the home page {% if session.username %}<span id="username"
+    >{{ session.username }}</span
+  >{% endif %}
+</p>
+<p>This is an Example of a Flask Application using the Flask Framework.</p>
+<p>Try navigating to the links at the top navigation bar.</p>
+{% endblock %}

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Flask Example Website</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='styles.css') }}"
+    />
+  </head>
+  <body>
+    <nav class="navbar">
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li>
+          <a href="#" class="brand-logo">
+            <img
+              src="{{ url_for('static', filename='images/logo.webp') }}"
+              alt="logo"
+              class="logo"
+            />
+          </a>
+        </li>
+        <li><a href="/home">Home</a></li>
+        <li><a href="/about">About</a></li>
+        {% if session.username %}
+        <li><a href="/auth/logout">Logout</a></li>
+        {% else %}
+        <li><a href="/auth/login">Login</a></li>
+        <li><a href="/auth/register">Register</a></li>
+        {% endif %}
+      </ul>
+    </nav>
+    <div class="container">{% block content %} {% endblock %}</div>
+    <footer class="page-footer">
+      <p>
+        All rights reserved &copy;
+        <a href="https://github.com/ofersadan85/python-fullstack/"
+          >Python Fullstack course</a
+        >
+        2023
+      </p>
+    </footer>
+  </body>
+</html>
