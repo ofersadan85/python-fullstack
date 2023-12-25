@@ -4,7 +4,7 @@ from pathlib import Path
 from flask import Blueprint, flash, redirect, render_template, request, session
 
 bp = Blueprint("auth", __name__, url_prefix="/auth")
-
+users_file = Path(__file__).parent.with_name("users.json")
 
 @bp.route("/register", methods=["GET", "POST"])
 def register():
@@ -14,8 +14,7 @@ def register():
 @bp.route("/login", methods=["GET", "POST"])
 def login():
     if request.method == "POST":
-        print(Path.cwd())
-        with open("users.json", "r") as f:
+        with open(users_file, "r") as f:
             users = json.load(f)
         form_username = request.form["username"]
         form_password = request.form["password"]
