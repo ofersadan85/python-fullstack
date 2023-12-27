@@ -48,17 +48,14 @@ The project structure is as follows:
 ```text
 .
 ├── main.py             # The main entry point of the website
-├── users.json          # A JSON file containing the users
+├── data.db             # An sqlite DB file
 ├── README.md           # This guide you're reading right now
 ├── requirements.txt    # The list of dependencies
 ├── static              # Static files (images, CSS, JS, etc.)
 │   ├── images          # Images
 ├── templates           # HTML templates (Jinja2)
+├── sql                 # SQL files
 ```
-
-## Loading the `users.json` file
-
-The `users.json` file contains a `dict` of users. If you're having trouble loading it, make sure you're running the website from the correct directory. If that fails, fix the file path in `views/auth.py`
 
 ## Features added / TODO
 
@@ -68,8 +65,9 @@ The `users.json` file contains a `dict` of users. If you're having trouble loadi
 - [x] Structure: `requirements.txt` file
 - [x] Structure: `README.md` file
 - [x] Pages / Logic: Login/logout
+- [x] Pages / Logic: Register new user
+- [x] Structure: Use a database instead of the `users.json` file
 
 ### TODO
 
-- [ ] Pages / Logic: Register new user
-- [ ] Structure: Use a database instead of the `users.json` file
+- [ ] Add some javascript validation to the forms

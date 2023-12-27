@@ -1,6 +1,9 @@
 {% extends "base.html" %}
 {% block content %}
     <h1>Register</h1>
+    {% for message in get_flashed_messages(category_filter=("error")) %}
+    <p class="error">{{ message }}</p>
+    {% endfor %}
     <p>Please fill out the form below to create an account.</p>
     <form id="register" method="post">
         <input type="text" name="username" placeholder="Username" required /><br />
