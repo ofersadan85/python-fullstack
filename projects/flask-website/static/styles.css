@@ -77,6 +77,11 @@ input[type="submit"] {
   width: 30%;
 }
 
+input[type="submit"]:disabled {
+  background-color: #cccccc;
+  color: #666666;
+}
+
 footer {
   background-color: #313131;
   color: #ffffff;
