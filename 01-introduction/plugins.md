@@ -18,6 +18,10 @@ To install them, open VSCode and click on the "Extensions" icon in the left menu
 | Prettier | Code formatter, makes your code look nice, can be used with the keyboard shortcut `Alt+Shift+F`. Note: We'll prefer to use Black Formatter instead of Prettier for Python code, but we'll use Prettier for other files like HTML, CSS, JavaScript, JSON, etc. |
 | vscode-icons | Adds icons to files in the file explorer, just nice to have |
 | SQLite Viewer | Allows you to view SQLite databases in VSCode |
+| ESLint | Linter for JavaScript and TypeScript |
+| Live Server | Runs a local web server for HTML, CSS and JavaScript files |
+| Live Preview | Shows a live preview of HTML files in VSCode |
+
 
 Each of these extensions has a page on the [VSCode Marketplace](https://marketplace.visualstudio.com/VSCode) where you can read more about them. Make sure to install the ones you think you'll need. Be careful when installing unfamiliar extensions, as they can slow down VSCode and cause other issues, including security issues.
 
@@ -31,7 +35,7 @@ Most extensions have many configuration options, but we'll leave them at their d
 
 We can also view and edit all VSCode settings (including extension settings) in JSON format by clicking `Ctrl+Shift+P` and searching for "Open User Settings (JSON)". Here is my example settings (with a brief description for each one), which include all of the above mentioned extensions, you may copy and replace any part you like to match your settings to mine:
 
-```json
+```jsonc
 {
     "editor.inlineSuggest.enabled": true,  // Show suggestions inline, instead of in a popup
     "files.autoSave": "afterDelay",  // Automatically save files after a delay
