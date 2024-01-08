@@ -39,7 +39,6 @@ async function checkUsernameExists() {
 async function checkUsernameExistsAsync() {
   let response = await fetch("/auth/user_exists?username=" + username.value);
   let data = await response.json();
-  console.log(data);
   if (data.user_exists) {
     username.style.backgroundColor = "red";
     username_error.innerHTML = "Username already exists";
@@ -51,12 +50,6 @@ async function checkUsernameExistsAsync() {
   }
 }
 
-document
-  .getElementById("password2")
-  .addEventListener("input", checkPasswordsMatch);
-document
-  .getElementById("username")
-  .addEventListener("focusout", checkUsernameExists);
-// document
-//   .getElementById("username")
-//   .addEventListener("focusout", checkUsernameExistsAsync);
+password2.addEventListener("input", checkPasswordsMatch);
+username.addEventListener("focusout", checkUsernameExists);
+// username.addEventListener("focusout", checkUsernameExistsAsync);
