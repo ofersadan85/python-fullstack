@@ -61,5 +61,6 @@ Course material for "Python Fullstack"
     4. `flask` - Python Web framework
         1. [Introduction](./04-external/flask.md)
         2. [Templates](./04-external/flask-templates.md)
-    4. JavaScript - Will be added later
-    5. React - Will be added later
+    5. JavaScript
+        1. [Basics](./05-web/js1.md)
+    6. React - Will be added later
