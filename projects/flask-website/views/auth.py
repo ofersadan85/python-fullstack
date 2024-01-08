@@ -1,5 +1,5 @@
 import sqlite3
-from flask import Blueprint, flash, redirect, render_template, request, session, current_app, jsonify
+from flask import Blueprint, flash, redirect, render_template, request, session, current_app
 from db import get_db
 
 bp = Blueprint("auth", __name__, url_prefix="/auth")
@@ -11,15 +11,15 @@ def user_exists():
     cursor = db.cursor()
     username = request.args.get("username")
     if not username:
-        return jsonify({"user_exists": False})
+        return {"user_exists": False}
     with current_app.open_resource("sql/users_select_username.sql", "r") as f:
         sql = f.read()
     cursor.execute(sql, [username])
     db_user = cursor.fetchone()
     if db_user:
-        return jsonify({"user_exists": True})
+        return {"user_exists": True}
     else:
-        return jsonify({"user_exists": False})
+        return {"user_exists": False}
 
 
 @bp.route("/register", methods=["GET", "POST"])
