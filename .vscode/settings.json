@@ -3,5 +3,6 @@
         "jsonify",
         "pytest",
         "rgba"
-    ]
+    ],
+    "prettier.configPath": ".vscode/.prettierrc"
 }

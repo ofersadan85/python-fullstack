@@ -3,21 +3,14 @@
   <head>
     <meta charset="UTF-8" />
     <title>Flask Example Website</title>
-    <link
-      rel="stylesheet"
-      href="{{ url_for('static', filename='styles.css') }}"
-    />
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}" />
   </head>
   <body>
     <nav class="navbar">
       <ul id="nav-mobile" class="right hide-on-med-and-down">
         <li>
           <a href="#" class="brand-logo">
-            <img
-              src="{{ url_for('static', filename='images/logo.webp') }}"
-              alt="logo"
-              class="logo"
-            />
+            <img src="{{ url_for('static', filename='images/logo.webp') }}" alt="logo" class="logo" />
           </a>
         </li>
         <li><a href="/home">Home</a></li>
@@ -34,9 +27,7 @@
     <footer class="page-footer">
       <p>
         All rights reserved &copy;
-        <a href="https://github.com/ofersadan85/python-fullstack/"
-          >Python Fullstack course</a
-        >
+        <a href="https://github.com/ofersadan85/python-fullstack/">Python Fullstack course</a>
         2023
       </p>
     </footer>
