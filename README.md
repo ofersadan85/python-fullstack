@@ -2,6 +2,8 @@
 
 Course material for "Python Fullstack"
 
+![Python Fullstack Model](./01-introduction/PythonFullStack.png)
+
 ## Table of contents
 
 1. Installing Requirements
