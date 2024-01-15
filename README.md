@@ -38,6 +38,7 @@ Course material for "Python Fullstack"
     1. [PyPi / pip - Installing packages](./01-introduction/pip.md)
     2. [`pytest` - Unit testing](./04-external/pytest.md)
     3. [`flask` - Web framework](./04-external/flask.md)
+    
 5. Exercises / Algorithms
     1. [Basic math + Modulus](./02-basic-exercises/a.py)
     2. [Convert minutes to hours/minutes/seconds](./02-basic-exercises/b.py)
@@ -62,7 +63,8 @@ Course material for "Python Fullstack"
     3. [CSS](./05-web/css.md)
     4. `flask` - Python Web framework
         1. [Introduction](./04-external/flask.md)
-        2. [Templates](./04-external/flask-templates.md)
+        2. [Writing our own flask clone](./04-external/flask-clone.md)
+        3. [Templates](./04-external/flask-templates.md)
     5. JavaScript
         1. [Basics](./05-web/js1.md)
     6. React - Will be added later
