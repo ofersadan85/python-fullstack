@@ -11,7 +11,7 @@ GET / HTTP/1.1
 Host: www.example.com
 ```
 
-Which means, that the client want's to make a request to the server, to ***get*** the root document (`/`) of the website `www.example.com`.
+Which means, that the client wants to make a request to the server, to ***get*** the root document (`/`) of the website `www.example.com`.
 
 ### Request Headers
 
