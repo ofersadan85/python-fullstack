@@ -140,6 +140,10 @@ This is the simplest way to define parameters, that will get passed toe the func
 
 In the future, we will see more advanced ways to define parameters.
 
+## Flask folder structure
+
+See the [Sales Website](../projects/sales-website/README.md) example project for a detailed explanation of the folder structure.
+
 ## Flask resources / documentation
 
 - [Flask documentation](https://flask.palletsprojects.com/en/3.0.x/) - The official documentation for `flask`. Contains many useful tutorials and examples about specific topics we will learn in the future, in which case we will link directly to the relevant page.
