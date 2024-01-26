@@ -38,7 +38,6 @@ Course material for "Python Fullstack"
     1. [PyPi / pip - Installing packages](./01-introduction/pip.md)
     2. [`pytest` - Unit testing](./04-external/pytest.md)
     3. [`flask` - Web framework](./04-external/flask.md)
-    
 5. Exercises / Algorithms
     1. [Basic math + Modulus](./02-basic-exercises/a.py)
     2. [Convert minutes to hours/minutes/seconds](./02-basic-exercises/b.py)
@@ -52,6 +51,7 @@ Course material for "Python Fullstack"
     2. [Poker](./projects/poker/main.py)
     3. [Tic Tac Toe](./projects/tictactoe/main.py)
     4. [Library](./projects/library/README.md)
+    5. [Sales website](./projects/sales-website/README.md)
 7. Tools
     1. [Git](./01-introduction/git.md)
     2. GitHub - Will be added later
