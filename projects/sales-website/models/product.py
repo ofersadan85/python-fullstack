@@ -5,8 +5,10 @@ from dataclasses import dataclass
 class ProductCreate:
     title: str
     price: float
-    amount: int
     description: str
+    image: str
+    # amount: int
+    # category: str
 
     def add_product_to_db(self) -> int:
         # cursor.execute("INSERT...")
