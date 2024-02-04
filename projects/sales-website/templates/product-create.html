@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MySales - Create new product</title>
+</head>
+<body>
+    <h1>Create a new product</h1>
+    <form>
+        <p>Product Title: <input type="text"></p>
+        <p>Product Description: <input type="text"></p>
+        <p>Price: <input type="number"></p>
+        <p>Category: <select>
+            <option>Please select category...</option>
+            {% for category in categories %}
+                <option>{{ category[0] }}</option>
+            {% endfor %}
+        </select></p>
+        <p>Image URL: <input type="text"></p>
+        <p><button>Submit</button></p>
+    </form>
+</body>
+</html>
