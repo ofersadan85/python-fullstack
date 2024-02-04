@@ -13,6 +13,7 @@
         <th>Price</th>
         <th>Image</th>
         <th>Add to cart</th>
+        <th>Delete</th>
       </tr>
       {% for product in products %}
       <tr>
@@ -23,8 +24,37 @@
           <img src="{{ product.image }}" width="128" height="128" />
         </td>
         <td><button>Add to cart</button></td>
+        <td>
+          <button id="{{ product.id }}" onclick="deleteProduct(event)">
+            Delete product
+          </button>
+        </td>
+        <!-- <td><a href="/products/delete/{{ product.id }}">Delete Product</a></td> -->
       </tr>
       {% endfor %}
     </table>
+    <script>
+      function deleteProduct(event) {
+        let button = event.target;
+        let cell = button.parentElement;
+        let row = cell.parentElement;
+        fetch("/products/delete/" + button.id).then((response) => {
+            if (response.status == 200) {
+                row.remove();
+            }
+        });
+      }
+
+      async function deleteProductAsync(event) {
+        let button = event.target;
+        let cell = button.parentElement;
+        let row = cell.parentElement;
+        let response = await fetch("/products/delete/" + button.id);
+        if (response.status == 200) {
+            row.remove();
+        }
+      }
+
+    </script>
   </body>
 </html>

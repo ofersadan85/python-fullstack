@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, redirect
 import sqlite3
 
 app = Flask(__name__)
@@ -48,6 +48,18 @@ def product_list():
         }
         product_list.append(product)
     return render_template("product-list.html", products=product_list)
+
+
+@app.route("/products/delete/<product_id>")
+def delete_product(product_id):
+    db = sqlite3.connect("data.db")
+    cursor = db.cursor()
+    cursor.execute("DELETE FROM products WHERE id = ?", [product_id])
+    if cursor.rowcount == 1:
+        db.commit()
+        return ("", 200)
+    if cursor.rowcount == 0:
+        return ("", 404)
 
 
 @app.route("/products/<product_id>")
