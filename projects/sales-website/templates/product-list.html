@@ -23,7 +23,11 @@
         <td>
           <img src="{{ product.image }}" width="128" height="128" />
         </td>
-        <td><button>Add to cart</button></td>
+        <td>
+            <button id="{{ product.id }}" onclick="addToCart(event)">
+                Add to cart
+            </button>
+        </td>
         <td>
           <button id="{{ product.id }}" onclick="deleteProduct(event)">
             Delete product
@@ -33,6 +37,7 @@
       </tr>
       {% endfor %}
     </table>
+    <script src="/static/js/cart_add.js"></script>
     <script src="/static/js/product_delete.js"></script>
   </body>
 </html>

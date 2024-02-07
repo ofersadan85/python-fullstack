@@ -1,11 +1,13 @@
 from flask import Flask
 from views.users import bp as users_bp
 from views.products import bp as products_bp
+from views.carts import bp as carts_bp
 
 
 app = Flask(__name__)
 app.register_blueprint(users_bp)
 app.register_blueprint(products_bp)
+app.register_blueprint(carts_bp)
 
 
 @app.route("/")
