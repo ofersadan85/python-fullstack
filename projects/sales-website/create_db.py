@@ -69,5 +69,13 @@ products = {6: 4, 7: 10, 1: 1}
 # json.dump(products, file)
 products_json = json.dumps(products)  # "[6, 7, 8, 20]"
 
-cursor.execute("INSERT INTO carts (user_id, products) VALUES (?, ?)", [user_id, products_json])
+cursor.execute("INSERT INTO carts (user_id, products) VALUES (?, ?)", [1, products_json])
+cursor.execute("INSERT INTO carts (user_id, products) VALUES (?, ?)", [2, products_json])
+cursor.execute("INSERT INTO carts (user_id, products) VALUES (?, ?)", [3, products_json])
+cursor.execute("INSERT INTO carts (user_id, products) VALUES (?, ?)", [3, products_json])
+cursor.execute("INSERT INTO carts (user_id, products) VALUES (?, ?)", [4, products_json])
+cursor.execute("INSERT INTO carts (user_id, products) VALUES (?, ?)", [5, products_json])
+cursor.execute("INSERT INTO carts (user_id, products) VALUES (?, ?)", [6, products_json])
+cursor.execute("INSERT INTO carts (user_id, products) VALUES (?, ?)", [7, products_json])
+cursor.execute("INSERT INTO carts (user_id, products) VALUES (?, ?)", [8, products_json])
 db.commit()
