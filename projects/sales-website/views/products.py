@@ -1,5 +1,6 @@
 from flask import render_template, Blueprint
 from db import get_db
+from models.products import Product
 
 bp = Blueprint("products", __name__)
 
@@ -20,16 +21,7 @@ def product_list():
     cursor = db.cursor()
     cursor.execute("SELECT id, title, description, price, image FROM products")
     data = cursor.fetchall()  # List of tuples - tuple = row in table
-    product_list = []
-    for item in data:
-        product = {
-            "id": item[0],
-            "title": item[1],
-            "description": item[2],
-            "price": item[3],
-            "image": item[4],
-        }
-        product_list.append(product)
+    product_list = [Product(*item) for item in data]
     return render_template("product-list.html", products=product_list)
 
 
@@ -55,13 +47,6 @@ def product_page(product_id):
     )
     data = cursor.fetchone()
     if data:
-        product = {
-            "id": data[0],
-            "title": data[1],
-            "description": data[2],
-            "price": data[3],
-            "image": data[4],
-        }
-        return render_template("product.html", product=product)
+        return render_template("product.html", product=Product(*data))
     else:
         return "PRODUCT NOT FOUND"
