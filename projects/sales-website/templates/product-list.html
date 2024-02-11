@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/static/css/styles.css" />
     <title>MySales - Products List</title>
   </head>
   <body>
@@ -17,23 +18,18 @@
       </tr>
       {% for product in products %}
       <tr>
-        <td>{{ product.title }}</td>
+        <td><a href="/products/{{ product.id }}"> {{ product.title }}</a></td>
         <td>{{ product.description }}</td>
         <td>{{ product.price }}</td>
         <td>
           <img src="{{ product.image }}" width="128" height="128" />
         </td>
         <td>
-            <button id="{{ product.id }}" onclick="addToCart(event)">
-                Add to cart
-            </button>
+          <button id="{{ product.id }}" onclick="addToCart(event)">Add to cart</button>
         </td>
         <td>
-          <button id="{{ product.id }}" onclick="deleteProduct(event)">
-            Delete product
-          </button>
+          <button id="{{ product.id }}" onclick="deleteProduct(event)">Delete product</button>
         </td>
-        <!-- <td><a href="/products/delete/{{ product.id }}">Delete Product</a></td> -->
       </tr>
       {% endfor %}
     </table>
