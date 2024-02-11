@@ -1,4 +1,4 @@
-from flask import Flask, request, make_response, render_template, redirect
+from flask import Flask, flash, request, render_template, redirect, session
 from db import get_db
 from views.users import bp as users_bp
 from views.products import bp as products_bp
@@ -6,6 +6,7 @@ from views.carts import bp as carts_bp
 
 
 app = Flask(__name__)
+app.secret_key = "MYreallySECRETkey"
 app.register_blueprint(users_bp)
 app.register_blueprint(products_bp)
 app.register_blueprint(carts_bp)
@@ -21,11 +22,13 @@ def main_page():
         user_id = cursor.fetchone()  # (7,)  # None
         if user_id is not None:  # if user_id:
             user_id = user_id[0]  # 7
-            response = redirect("/products")
-            response.set_cookie("user_id", str(user_id))
-            return response
+            session["user_id"] = str(user_id)
+            return redirect("/products")
         else:
-            return render_template("login.html", error_messages="Username does not exist")
+            flash("Username does not exist")
+            flash("Username is ugly")
+            flash("Username doesnt want to exist")
+            return render_template("login.html")
 
     if "user_id" in request.cookies:
         return redirect("/products")
@@ -35,9 +38,8 @@ def main_page():
 
 @app.route("/logout")
 def logout():
-    response = redirect("/")
-    response.delete_cookie("user_id")
-    return response
+    session.pop("user_id", None)
+    return redirect("/")
 
 
 app.run(debug=True)

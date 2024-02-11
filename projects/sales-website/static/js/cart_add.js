@@ -34,10 +34,6 @@ function addToCookieCart(productID) {
 
 async function addToCart(event) {
   let button = event.target;
-  let user_id = getCookie("user_id");
-  if (user_id == "") {
-    addToCookieCart(button.id);
-  } else {
-    addToUserCart(button.id);
-  }
+  addToCookieCart(button.id);
+  addToUserCart(button.id);
 }
