@@ -26,8 +26,7 @@ cursor.execute(
 )
 
 cursor.execute("""CREATE TABLE IF NOT EXISTS carts (
-                id INTEGER PRIMARY KEY NOT NULL,
-                user_id INTEGER,
+                user_id INTEGER PRIMARY KEY NOT NULL,
                 products TEXT,
                 purchase_date TEXT
 )""")
@@ -71,7 +70,6 @@ products_json = json.dumps(products)  # "[6, 7, 8, 20]"
 
 cursor.execute("INSERT INTO carts (user_id, products) VALUES (?, ?)", [1, products_json])
 cursor.execute("INSERT INTO carts (user_id, products) VALUES (?, ?)", [2, products_json])
-cursor.execute("INSERT INTO carts (user_id, products) VALUES (?, ?)", [3, products_json])
 cursor.execute("INSERT INTO carts (user_id, products) VALUES (?, ?)", [3, products_json])
 cursor.execute("INSERT INTO carts (user_id, products) VALUES (?, ?)", [4, products_json])
 cursor.execute("INSERT INTO carts (user_id, products) VALUES (?, ?)", [5, products_json])
