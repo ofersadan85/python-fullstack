@@ -1,4 +1,4 @@
-from flask import Blueprint, request
+from flask import Blueprint, session
 from db import get_db
 import json
 
@@ -6,7 +6,8 @@ bp = Blueprint("carts", __name__)
 
 @bp.route("/add_to_cart/<product_id>")
 def add_to_cart(product_id):
-    user_id = request.cookies["user_id"]
+    # user_id = request.cookies["user_id"]
+    user_id = session["user_id"]
     db = get_db()
     cursor = db.cursor()
 

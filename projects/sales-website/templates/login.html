@@ -1,15 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>MySales - Login</title>
-</head>
-<body>
-    <div>{{ error_messages }}</div>
+  </head>
+  <body>
+    {% for msg in get_flashed_messages() %}
+    <div>{{ msg }}</div>
+    {% endfor %}
     <form>
-        <p>Username: <input type="text" name="username"></p>
-        <button>Login</button>
+      <p>Username: <input type="text" name="username" /></p>
+      <button>Login</button>
     </form>
-</body>
+  </body>
 </html>
