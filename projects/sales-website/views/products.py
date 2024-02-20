@@ -1,4 +1,4 @@
-from flask import render_template, Blueprint
+from flask import make_response, render_template, Blueprint, request
 from db import get_db
 from models.products import Product
 
@@ -21,8 +21,13 @@ def product_list():
     cursor = db.cursor()
     cursor.execute("SELECT id, title, description, price, image FROM products")
     data = cursor.fetchall()  # List of tuples - tuple = row in table
-    product_list = [Product(*item) for item in data]
-    return render_template("product-list.html", products=product_list)
+    if "text/html" in request.headers.get("Accept", ""):
+        product_list = [Product(*item) for item in data]
+        return render_template("product-list.html", products=product_list)
+    else:
+        response = make_response(data)
+        response.headers.add("Access-Control-Allow-Origin", "*")
+        return response
 
 
 @bp.route("/products/delete/<product_id>")
