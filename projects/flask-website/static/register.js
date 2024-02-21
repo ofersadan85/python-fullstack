@@ -7,33 +7,41 @@ let username = document.getElementById("username-box");
 let username_error = document.getElementById("username_error");
 let registerButton = document.querySelector("#register input[type=submit]");
 
+let buttonState = {
+    _usernameAvailable: true,
+    get usernameAvailable() { return this._usernameAvailable },
+    set usernameAvailable(value) {
+        this._usernameAvailable = value;
+        this.decideAboutButton();
+    },
+
+    _passwordsMatch: true,
+    get passwordsMatch() { return this._passwordsMatch },
+    set passwordsMatch(value) {
+        this._passwordsMatch = value;
+        this.decideAboutButton();
+    },
+
+    decideAboutButton: function() {
+        if (buttonState.passwordsMatch && buttonState.usernameAvailable) {
+            registerButton.disabled = false;
+        } else {
+            registerButton.disabled = true;
+        }
+    }
+}
+
+
 function checkPasswordsMatch() {
   if (password.value !== password2.value) {
     password2.style.backgroundColor = "red";
     password_error.innerHTML = "Passwords do not match";
-    registerButton.disabled = true;
+    buttonState.passwordsMatch = false;
   } else {
     password2.removeAttribute("style");
     password_error.innerHTML = "";
-    registerButton.disabled = false;
+    buttonState.passwordsMatch = true;
   }
-}
-
-async function checkUsernameExists() {
-  fetch("/auth/user_exists?username=" + username.value)
-    .then((response) => response.json())
-    .then((data) => {
-      console.log(data);
-      if (data.user_exists) {
-        username.style.backgroundColor = "red";
-        username_error.innerHTML = "Username already exists";
-        registerButton.disabled = true;
-      } else {
-        username.removeAttribute("style");
-        username_error.innerHTML = "";
-        registerButton.disabled = false;
-      }
-    });
 }
 
 async function checkUsernameExistsAsync() {
@@ -42,14 +50,14 @@ async function checkUsernameExistsAsync() {
   if (data.user_exists) {
     username.style.backgroundColor = "red";
     username_error.innerHTML = "Username already exists";
-    registerButton.disabled = true;
+    buttonState.usernameAvailable = false;
   } else {
     username.removeAttribute("style");
     username_error.innerHTML = "";
-    registerButton.disabled = false;
+    buttonState.usernameAvailable = true;
   }
 }
 
+
 password2.addEventListener("input", checkPasswordsMatch);
-username.addEventListener("focusout", checkUsernameExists);
-// username.addEventListener("focusout", checkUsernameExistsAsync);
+username.addEventListener("focusout", checkUsernameExistsAsync);
