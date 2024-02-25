@@ -68,4 +68,5 @@ Course material for "Python Fullstack"
     5. JavaScript
         1. [Basics](./05-web/js1.md)
         2. [Getters and Setters](./05-web/js2.md)
+        3. [JavaScript weirdness](./05-web/js3.md)
     6. React - Will be added later
