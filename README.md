@@ -11,6 +11,7 @@ Course material for "Python Fullstack"
     2. [Installing an IDE](./01-introduction/ide.md) (Visual Studio Code or PyCharm)
     3. [Recommended plugins (VSCode)](./01-introduction/plugins.md)
     4. [Git](./01-introduction/git.md)
+    5. [Node/NPM](./01-introduction/npm.md)
 2. Python basics
     1. [Hello World](./01-introduction/hello.md)
     2. [Variables](./01-introduction/variables.md)
@@ -69,4 +70,5 @@ Course material for "Python Fullstack"
         1. [Basics](./05-web/js1.md)
         2. [Getters and Setters](./05-web/js2.md)
         3. [JavaScript weirdness](./05-web/js3.md)
-    6. React - Will be added later
+    6. React
+        1. [Intro](./05-web/react1.md)
