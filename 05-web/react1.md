@@ -130,7 +130,7 @@ npm run dev
 
 This will start the development server. You can open your browser and navigate to `http://localhost:5173` to see your React application. (Change the port number if vite outputs a different port number).
 
-The ouput in the terminal should be similar to this:
+The output in the terminal should be similar to this:
 
 ```powershell
   VITE v5.1.4  ready in 349 ms
@@ -141,6 +141,7 @@ The ouput in the terminal should be similar to this:
 ```
 
 And your browser should show the Vite + React welcome page
+
 ![Vite](vite.png)
 
 You can now start building your React application. You can edit the files in the `src` folder and see the changes in the browser. You can also add new files and components, and Vite will automatically update the browser (as long as the development server is running).
