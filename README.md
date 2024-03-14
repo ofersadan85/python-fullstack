@@ -35,10 +35,12 @@ Course material for "Python Fullstack"
     9. [Generators](./03-advanced/generators.md)
     10. [Parallel processing](./03-advanced/parallel-processing.md)
     11. [Unit testing](./04-external/pytest.md)
+    12. [Environment variables](./03-advanced/env-vars.md)
 4. External Python Packages (PyPi / pip)
     1. [PyPi / pip - Installing packages](./01-introduction/pip.md)
     2. [`pytest` - Unit testing](./04-external/pytest.md)
     3. [`flask` - Web framework](./04-external/flask.md)
+    4. [`python-dotenv` - Environment variables](./03-advanced/env-vars.md#working-example)
 5. Exercises / Algorithms
     1. [Basic math + Modulus](./02-basic-exercises/a.py)
     2. [Convert minutes to hours/minutes/seconds](./02-basic-exercises/b.py)
@@ -53,6 +55,7 @@ Course material for "Python Fullstack"
     3. [Tic Tac Toe](./projects/tictactoe/main.py)
     4. [Library](./projects/library/README.md)
     5. [Sales website](./projects/sales-website/README.md)
+    6. Shop frontend in React - [GitHub](https://github.com/ofersadan85/front-demo) and [Demo](https://ofersadan85.github.io/front-demo/)
 7. Tools
     1. [Git](./01-introduction/git.md)
     2. GitHub - Will be added later
