@@ -1,10 +1,13 @@
 {
     "cSpell.words": [
+        "classmethods",
+        "dataclasses",
         "INET",
         "jsonify",
         "pytest",
         "rgba",
-        "sendall"
+        "sendall",
+        "staticmethods"
     ],
     "prettier.configPath": ".vscode/.prettierrc"
 }
