@@ -1,9 +1,11 @@
 {
     "cSpell.words": [
+        "appcontext",
         "classmethods",
         "dataclasses",
         "INET",
         "jsonify",
+        "lastrowid",
         "pytest",
         "rgba",
         "sendall",
