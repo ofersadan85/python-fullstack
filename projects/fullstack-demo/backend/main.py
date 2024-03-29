@@ -1,61 +1,60 @@
 from dataclasses import asdict
 
-from dotenv import load_dotenv
-from flask import Flask, Response, request
-from models import NewUser, PublicUser, User
-from db import get_db, close_db
+from db import close_db, get_db, init_db
+from flask import Flask, request, session
+from flask_cors import CORS
+from flask_jwt_extended import JWTManager, create_access_token, get_jwt, jwt_required
 
-
-def add_cors_headers(response: Response) -> Response:
-    """Add CORS headers to the response"""
-    response.headers["Access-Control-Allow-Origin"] = "*"
-    response.headers["Access-Control-Allow-Headers"] = "*"
-    response.headers["Access-Control-Allow-Methods"] = "*"
-    return response
-
-
-load_dotenv()  # Load environment variables from a .env file
 app = Flask(__name__)
-app.after_request(add_cors_headers)  # Add CORS headers to all responses
+app.config.from_prefixed_env()
+FRONTEND_URL = app.config.get("FRONTEND_URL")
+cors = CORS(app, origins=FRONTEND_URL, methods=["GET", "POST", "DELETE"])
+print(FRONTEND_URL)
+jwt = JWTManager(app)
 app.teardown_appcontext(close_db)  # Close the database connection after each request
 
 
-@app.route("/users")
-def get_users() -> list[PublicUser]:
-    db = get_db()
-    cursor = db.cursor()
-    cursor.execute("SELECT id, username, email, age FROM users")
-    users = [PublicUser(*row) for row in cursor.fetchall()]
-    return users
-
-
-@app.route("/users", methods=["POST"])
-def create_user() -> dict:
-    # TODO: Add validation, error handling (what if the user already exists? what if the request is missing fields? etc.)
-    new_user = NewUser(**request.get_json())
+@app.route("/login", methods=["POST"])
+def login() -> dict:
+    data = request.get_json()
     db = get_db()
     cursor = db.cursor()
     cursor.execute(
-        "INSERT INTO users (username, password, email, age) VALUES (?, ?, ?, ?)",
-        (new_user.username, new_user.password, new_user.email, new_user.age),
+        "SELECT id FROM users WHERE username = ? AND password = ?",
+        (data["username"], data["password"]),
     )
-    db.commit()
-    cursor.execute("SELECT id FROM users WHERE username = ?", (new_user.username,))
-    # TODO: This is a bad way to return the new user's data, it will be better not to query the database again.
-    data = cursor.fetchone()
-    user_id = data["id"]
-    public_user = PublicUser(user_id, new_user.username, new_user.email, new_user.age)
-    return asdict(public_user)
+    user = cursor.fetchone()
+    if user is None:
+        return {"error": "Invalid username or password"}
+    else:
+        access_token = create_access_token(identity=user["id"])
+        return {"access_token": access_token}
 
 
-@app.route("/users/<int:user_id>", methods=["DELETE"])
-def delete_user(user_id: int) -> str:
-    # TODO: Add error handling (what if the user doesn't exist? etc.)
+@app.route("/logout", methods=["POST"])
+def logout() -> dict:
+    # This does absolutely nothing, it's just here to show that you don't really need to do anything special to "log out"
+    # What you will need to do is to delete the access token from the client side, which will effectively log the user out
+    # Alternatively, you can blacklist the token, but that's a more advanced topic
+    return {"message": "Successfully logged out"}
+
+
+@app.route("/users/me")
+@jwt_required()
+def get_me() -> dict:
+    token_data = get_jwt()
+    user_id = token_data["sub"]
     db = get_db()
     cursor = db.cursor()
-    cursor.execute("DELETE FROM users WHERE id = ?", (user_id,))
-    db.commit()
-    return ""
-
-
-app.run()
+    cursor.execute("SELECT id, username, role, email, age FROM users WHERE id = ?", (user_id,))
+    user = cursor.fetchone()
+    if user is None:
+        return {"error": "User not found"}
+    else:
+        return {
+            "id": user["id"],
+            "username": user["username"],
+            "role": user["role"],
+            "email": user["email"],
+            "age": user["age"],
+        }
