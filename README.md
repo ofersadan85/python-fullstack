@@ -12,6 +12,7 @@ Course material for "Python Fullstack"
     3. [Recommended plugins (VSCode)](./01-introduction/plugins.md)
     4. [Git](./01-introduction/git.md)
     5. [Node/NPM](./01-introduction/npm.md)
+    6. [PostgreSQL](./04-external/postgres.md)
 2. Python basics
     1. [Hello World](./01-introduction/hello.md)
     2. [Variables](./01-introduction/variables.md)
@@ -60,7 +61,8 @@ Course material for "Python Fullstack"
     1. [Git](./01-introduction/git.md)
     2. GitHub - Will be added later
     3. [SQL / SQLite / Databases](./04-external/sql.md)
-    4. Docker - Will be added later
+    4. [Advanced SQL](./04-external/sql-advanced.md)
+    5. Docker - Will be added later
 8. Web
     1. [HTTP Basics](./05-web/http.md)
     2. [HTML](./05-web/html.md)
@@ -75,3 +77,67 @@ Course material for "Python Fullstack"
         3. [JavaScript weirdness](./05-web/js3.md)
     6. React
         1. [Intro](./05-web/react1.md)
+
+## Final project
+
+Your final project will be to create a full-stack web application. The project is graded based on 3 main categories:
+
+1. Data models (20%) - This is everything related to the database, but also how data is structured (classes, functions, etc.) in your code (both frontend and backend).
+2. Fullstack (70%) - Your application should work as expected, and include all the features that you've planned. This includes the frontend, backend, and any other parts of the application (like tests, documentation, etc.). The application should run at least on the your local machine.
+3. Cloud / Production (10%) - Your application should be deployed to a cloud service. This must include Docker, and a CI/CD pipeline. This must also include some logic to handle different environments (like development, production, etc.).
+
+In general, your project must meet the following requirements:
+
+### Git / GitHub
+
+Your project must be committed to a GitHub repository. You must remember to properly `.gitignore` files that should not be committed (like `.env` files, `node_modules`, etc.).
+
+Your project should be documented in the `README.md` file, including a description of the project, how to run it, and any other relevant information. For example, if cloning the repository requires setting up environment variables (that aren't committed to git), you should include that information in the `README.md`.
+
+### Frontend
+
+You may choose to create a frontend in React, or use "Jinja" templates in Flask / Django. However, if you choose to use Flask templates, your max score (in a perfect project) will be 90. If you choose to use React, your max score will be 100.
+
+Your application must include:
+
+- 10 pages / screens (minimum). A page / screen means a different UI that the user can interact with. For example, a shopping website might have a home page, a product page, a cart page, a checkout page, etc. There's no requirement for the screens to have different URLs, but they must be different in terms of UI. Each screen must have a different purpose and actions that the user can take (like adding an item to the cart, or checking out). There's no problem reusing the same template / components for different screens, as long as the content is different.
+- At least 3 different user types, other than "guest" users (like "admin", "customer", "manager", etc.). Each user type must have different permissions and actions that they can take. For example, an admin might be able to delete products, while a customer can only view them. This should be **enforced** on the backend, but the frontend should also hide / show buttons and links based on the user type.
+- If using forms for user input, you may skip validation on the frontend, but it's highly recommended to include it. Validation **must** be done on the backend. In either case, the user must receive feedback if the input is invalid. For example, if the user tries to register with an invalid username, they should see a message telling them what's wrong.
+- There is no requirement for the frontend to be "pretty" or "modern", but it must be functional and easy to use. You may use CSS frameworks like Bootstrap, but it's not required. You may also include any other frontend libraries or tools that you like, but they must be included directly in the project (no CDN links).
+- Documentation: You do not have to include documentation for every function, but if something is not obvious, you should include a comment explaining what it does. You should also include a `README.md` file with instructions on how to run the frontend, how to build it, etc.
+- It's **not** a requirement to include tests for the frontend, but of course, it can't hurt. You may use any testing library or tool that you like.
+
+It's not a requirement to include tests for the frontend, but it's highly recommended. You may use any testing library or tool that you like.
+
+### Backend
+
+The backend must be written in Python, using Flask / Django / FastAPI. You may use any other libraries or tools that you like, but they must all be included in the `requirements.txt` file (preferably with versions numbers as well, so there won't be any mismatches between your development environment and the grading environment). The grading environment will use Python 3.12 by default, but you may specify a different version in your `README.md` file.
+
+Your application must include:
+
+- Folder / file structure that makes sense. There's no specific template you should follow, but it should be clear where each part of the application is located. For example, all the models should be in one folder, all the views in another, etc. Definitely don't put everything in one `main.py` file.
+- Classes that represent the different entities in your application. For example, if you're creating a library application, you might have classes for `Book`, `Author`, `User`, etc. These don't have to match exactly with the database tables, but they should be close.
+- As mentioned in the "Frontend" section, at least 3 different user types, other than "guest" users (like "admin", "customer", "manager", etc.). Each user type must have different permissions and actions that they can take. While this can be validated on the frontend, it **must** be enforced on the backend. For example, if a user tries to delete a product that they don't have permission to delete, the backend should return an error.
+- Your application must be able to handle bad data / bad user input. For example, if a user tries to send a request with a username that's actually a number, or send a string where we expect a list etc. You are not expected to handle every possible edge case, but you should handle the most common ones.
+- Your application must include tests. You do not have to test every trivial case, but test edge cases where you want to be sure that everything is working as expected. While it's preferable to use `pytest`, you may use any testing library or tool that you like, but it must be included in the `requirements.txt` file. You should also include instructions on how to run the tests in the `README.md` file.
+- Documentation: You do not have to include documentation for every function, but if something is not obvious, you should include a comment explaining what it does. You should also include a `README.md` file with instructions on how to run the backend, how to run the tests, etc.
+
+### Database
+
+You must use a database in your application. You may use SQLite, PostgreSQL, or any other database that you like. In either case, you have to include instructions on how to set up an example database that works with your application. This can be done using a script, or by including a `.sql` file that can be imported into the database.
+
+You do not have to include any specific features when using a database (like foreign keys, stored procedures, etc.), but it's highly recommended and will probably make your life easier.
+
+### Cloud / Production
+
+While this is the most advanced part of the project, it's also the smallest part of your grade. So focus on getting the application right before moving on to this part.
+
+Having said that, it will be very helpful if you keep this part in mind while developing the application. For example, it will be easier to deploy the application to a cloud service if you're already using environment variables for configuration, or if you're using Docker for development.
+
+> Other requirements in this section will be added later.
+
+## Good luck
+
+Writing a full-stack application is a big task, but it's also a great opportunity to show off everything you've learned in this course. Take it one problem at a time, and don't be afraid to ask for help if you get stuck.
+
+Teaching this course has been a pleasure, and I hope you've enjoyed it as well. I'm looking forward to seeing your projects, and I'm sure you'll do great.
