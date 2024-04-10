@@ -1,0 +1,27 @@
+nav {
+    display: flex;
+    color: white;
+    background-color: grey;
+    justify-content: center;
+    padding: 10px 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+ul {
+    list-style: none;
+    display: flex;
+}
+
+.navLink {
+    margin-right: 20px;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.navLink a {
+    color: white;
+    text-decoration: none;
+}
