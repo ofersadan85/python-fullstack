@@ -13,6 +13,7 @@ Course material for "Python Fullstack"
     4. [Git](./01-introduction/git.md)
     5. [Node/NPM](./01-introduction/npm.md)
     6. [PostgreSQL](./04-external/postgres.md)
+    7. [Docker](./04-external/docker.md)
 2. Python basics
     1. [Hello World](./01-introduction/hello.md)
     2. [Variables](./01-introduction/variables.md)
@@ -62,7 +63,8 @@ Course material for "Python Fullstack"
     2. GitHub - Will be added later
     3. [SQL / SQLite / Databases](./04-external/sql.md)
     4. [Advanced SQL](./04-external/sql-advanced.md)
-    5. Docker - Will be added later
+    5. [Docker](./04-external/docker2.md)
+    6. [Docker Build - Dockerfile](./04-external/docker3.md)
 8. Web
     1. [HTTP Basics](./05-web/http.md)
     2. [HTML](./05-web/html.md)
