@@ -136,7 +136,18 @@ While this is the most advanced part of the project, it's also the smallest part
 
 Having said that, it will be very helpful if you keep this part in mind while developing the application. For example, it will be easier to deploy the application to a cloud service if you're already using environment variables for configuration, or if you're using Docker for development.
 
-> Other requirements in this section will be added later.
+Requirements for this part include:
+
+- Server: Your application must include a `Dockerfile` that can be used to build a Docker image for the backend / server.
+- Client: Your application must include a `Dockerfile` that can be used to build a Docker image for the frontend / client.
+- Readme: Your grade for this part is mostly about seeing you understand the difference between your development environment and a production environment. So you should include information on how to build the Docker images, how to run them, and what environment variables are needed to be set. Basically, if someone else (like me) wants to run your application, they should be able to do it by following the instructions.
+- Docker Compose: While it's not a requirement, it's highly recommended to include a `docker-compose.yml` file that can be used to run the entire application (frontend, backend, and database) with a single command. This is not required, but it will make your life easier, and it's a good practice to use Docker Compose for local development as well.
+
+Theoretically, a project deployment could be as simple as the following steps:
+
+1. Clone the repository.
+2. Change environment variables to match the current environment.
+3. Run `docker-compose up` to start the application.
 
 ## Good luck
 
