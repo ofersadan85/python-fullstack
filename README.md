@@ -65,6 +65,7 @@ Course material for "Python Fullstack"
     4. [Advanced SQL](./04-external/sql-advanced.md)
     5. [Docker](./04-external/docker2.md)
     6. [Docker Build - Dockerfile](./04-external/docker3.md)
+    7. [Docker Cheat-Sheet & Docker Compose](./04-external/docker4.md)
 8. Web
     1. [HTTP Basics](./05-web/http.md)
     2. [HTML](./05-web/html.md)
