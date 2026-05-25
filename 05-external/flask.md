@@ -70,7 +70,7 @@ This is a [decorator](../03-advanced/functions-decorators.md). It tells `flask` 
 In that sense, we can think of the `app.route` we created as having two main goals:
 
 - To map routes (URL paths) to functions, so when a user enters a specific route, a specific function will be called.
-- To convert whatever the function returns to a valid [HTTP response](../05-web/http.md).
+- To convert whatever the function returns to a valid [HTTP response](../06-web/http.md).
 
 ## Routes
 
@@ -100,7 +100,7 @@ This is because by default, flask will take any string we return and convert it 
 
 ## Request methods
 
-So far, we have only seen `GET` requests (which is the default). But there are other types of requests, such as `POST`, `PUT`, `DELETE`, etc. (See [HTTP Basics](../05-web/http.md) for more information). The `route` decorator can take an optional `methods` parameter, which is a list of methods that the route will accept. For example:
+So far, we have only seen `GET` requests (which is the default). But there are other types of requests, such as `POST`, `PUT`, `DELETE`, etc. (See [HTTP Basics](../06-web/http.md) for more information). The `route` decorator can take an optional `methods` parameter, which is a list of methods that the route will accept. For example:
 
 ```python
 @app.route("/hello", methods=["GET", "POST"])

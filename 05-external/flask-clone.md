@@ -69,7 +69,7 @@ class Flask:
 
 ## Responses
 
-We discussed HTTP responses in the [HTTP Basics](../05-web/http.md) chapter. We will use the same format here. We will have two responses: one for a successful request and one for a 404 error.
+We discussed HTTP responses in the [HTTP Basics](../06-web/http.md) chapter. We will use the same format here. We will have two responses: one for a successful request and one for a 404 error.
 
 ```python
 http_response = """HTTP/1.1 200 OK
