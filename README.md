@@ -39,7 +39,8 @@ Course material for "Python Fullstack"
     11. [Unit testing](./05-external/pytest.md)
     12. [Environment variables](./03-advanced/env-vars.md)
 4. Python Standard Library
-    1. [`random` module - Basic examples](./04-standard-library/random.md)
+    1. [`random` module](./04-standard-library/random.md)
+    2. [`logging` module](./04-standard-library/logging.md)
 5. External Python Packages (PyPi / pip)
     1. [PyPi / pip - Installing packages](./01-introduction/pip.md)
     2. [`pytest` - Unit testing](./05-external/pytest.md)
